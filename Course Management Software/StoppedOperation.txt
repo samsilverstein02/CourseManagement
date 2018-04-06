@@ -1,0 +1,5 @@
+System is in stopped state,
+
+Press 1 to put in started state
+
+You cannot perform any other operations until it is in a started state

@@ -18,6 +18,8 @@ public class LoggedInAdmin implements LoggedInAuthenticatedUser {
 	private String ID;
 	private AuthenticationToken authenticationToken;
 	
+	//a constructor for a logged in admin object 
+	//attributes will be made with setter functions, after the user is created 
 	public LoggedInAdmin(){
 		this.name = "";
 		this.surname = "";
@@ -57,21 +59,23 @@ public class LoggedInAdmin implements LoggedInAuthenticatedUser {
 		this.authenticationToken = authenticationToken;
 	}
 	
+	//a function which starts the system
 	public void StartSystem() {
-		if(System_State.state == 1) {
+		if(System_State.state == 1) { //if already in started state, just inform the console, nothing needs to be done after
 			System.out.println("System is already in a started state");
 			return;
 		}
-		System_State.state = 1;
+		System_State.state = 1; //if not in started state, then it puts the system in a started state
 		System.out.println("System has been started");
 	}
 	
-	public void StopSystem() {
-		//Put if statement here if it is 0
+	//a function which puts the system in a stopped state
+	public void StopSystem() { 
 		System_State.state = 0;
 		System.out.println("System stoppage, you have been logged out and no operations can be performed until started again");
 	}
 	
+	//a function which reads course files, given the input by the user, which is the text file 
 	public void readCourseFiles() {
 		BufferedReader br = null;
 		BufferedReader reader = null;
